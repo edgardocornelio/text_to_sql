@@ -62,7 +62,8 @@ def main():
     print(f"Vector store built with {len(docs)} docs using {kind}.")
     # Optional quick test:
     sample = "How many employees are there?"
-    hits = retriever.get_relevant_documents(sample)
+    # hits = retriever.get_relevant_documents(sample)
+    hits = retriever.invoke(sample)
     print("Sample retrieval:", [h.metadata.get("source") for h in hits])
 
 if __name__ == "__main__":
